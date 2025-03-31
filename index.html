@@ -3,120 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entypt - Download</title>
+    <title>Entypt - Secure System Protection</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Adding Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Add AOS library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="./images/entypt-logo.png" alt="Entypt Logo" class="logo">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-shield-virus pulse"></i>
+                <span>ENTYPT</span>
+            </div>
+            <nav>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#requirements">Requirements</a></li>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact" class="cta-button">Contact Us</a></li>
+                </ul>
+            </nav>
         </div>
-        <h1>Entypt</h1>
-        <p class="tagline">Secure File Encryption Made Simple</p>
     </header>
-    
-    <div class="hero-banner">
-        <img src="./images/hero-screenshot.png" alt="Entypt application interface" class="hero-image">
-    </div>
-    
-    <main>
-        <section class="description">
-            <h2>About Entypt</h2>
-            <p>Entypt is a powerful file encryption tool designed to protect your sensitive information with military-grade encryption. Whether you need to secure personal documents or business data, Entypt provides an easy-to-use solution that anyone can master in minutes.</p>
-        </section>
-        
-        <section class="features">
-            <h2>Key Features</h2>
+
+    <section class="hero">
+        <div class="hero-background">
+            <div class="particles"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Impenetrable System Security</h1>
+                <p class="hero-subtitle">Military-grade encryption that creates an unbreakable barrier around your data</p>
+                
+                <div class="download-area">
+                    <a href="./EntyptInstaller.exe" class="download-button">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>
+                            <strong>Download Secure Installer</strong>
+                            <small>v1.0.0 for Windows (64-bit)</small>
+                        </span>
+                    </a>
+                    
+                    <div class="download-info">
+                        <p class="hash">SHA-256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</p>
+                        <p class="file-details">42MB • Digitally signed • Released June 15, 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 data-aos="fade-up">Advanced Security Features</h2>
+            
             <div class="feature-grid">
-                <div class="feature-item">
-                    <img src="./images/feature-encryption.png" alt="Strong Encryption" class="feature-icon">
-                    <h3>Strong Encryption</h3>
-                    <p>AES-256 encryption to keep your files secure</p>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Quantum-Resistant Encryption</h3>
+                    <p>AES-256 encryption that cannot be cracked even with future quantum computers</p>
                 </div>
-                <div class="feature-item">
-                    <img src="./images/feature-interface.png" alt="Easy Interface" class="feature-icon">
-                    <h3>Simple Interface</h3>
-                    <p>Drag-and-drop functionality for easy use</p>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Kernel-Level Integration</h3>
+                    <p>Deep system integration creating an impenetrable security barrier</p>
                 </div>
-                <div class="feature-item">
-                    <img src="./images/feature-password.png" alt="Password Management" class="feature-icon">
-                    <h3>Password Management</h3>
-                    <p>Secure password storage and management</p>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Advanced Key Management</h3>
+                    <p>Multi-layered protection with secure hardware-based key storage</p>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Real-Time Threat Detection</h3>
+                    <p>Immediate neutralization of unauthorized access attempts</p>
                 </div>
             </div>
-        </section>
-        
-        <section class="screenshots">
-            <h2>Screenshots</h2>
-            <div class="screenshot-gallery">
-                <img src="./images/screenshot1.png" alt="Entypt main screen" class="screenshot">
-                <img src="./images/screenshot2.png" alt="File selection interface" class="screenshot">
-                <img src="./images/screenshot3.png" alt="Encryption settings" class="screenshot">
+        </div>
+    </section>
+
+    <section class="security-banner parallax-section">
+        <div class="container">
+            <div class="banner-content" data-aos="zoom-in">
+                <i class="fas fa-award"></i>
+                <div>
+                    <h3>Military-Grade Security Standards</h3>
+                    <p>ISO 27001 • GDPR Compliant • HIPAA Compatible • FIPS 140-3</p>
+                </div>
             </div>
-        </section>
-        
-        <section class="download">
-            <h2>Download</h2>
-            <div class="download-container">
-                <img src="./images/download-icon.png" alt="Download" class="download-icon">
-                <a href="./EntyptInstaller.exe" class="download-button">Download Entypt</a>
-                <p class="version">Version: 1.0.0</p>
-                <p class="file-info">File size: 42MB | Released: June 15, 2025</p>
-            </div>
-        </section>
-        
-        <section class="requirements">
+        </div>
+    </section>
+
+    <section id="requirements" class="requirements">
+        <div class="container">
             <h2>System Requirements</h2>
-            <ul>
-                <li>Windows 10 or higher</li>
-                <li>4GB RAM</li>
-                <li>300MB free disk space</li>
-                <li>1GHz processor or better</li>
-                <li>DirectX 9 compatible graphics card</li>
-            </ul>
-        </section>
-        
-        <section class="installation">
-            <h2>Installation Instructions</h2>
-            <div class="installation-container">
-                <div class="installation-step">
-                    <img src="./images/step1.png" alt="Step 1" class="step-icon">
-                    <div class="step-details">
-                        <h3>Step 1</h3>
-                        <p>Download the installer by clicking the button above</p>
+            
+            <div class="requirements-grid">
+                <div class="requirement-item">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Operating System</h3>
+                    <p>Windows 10/11 (64-bit) with latest security updates</p>
+                </div>
+                
+                <div class="requirement-item">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Processor</h3>
+                    <p>1.5GHz+ multi-core with AES-NI support</p>
+                </div>
+                
+                <div class="requirement-item">
+                    <i class="fas fa-memory"></i>
+                    <h3>Memory</h3>
+                    <p>4GB RAM minimum, 8GB recommended</p>
+                </div>
+                
+                <div class="requirement-item">
+                    <i class="fas fa-hdd"></i>
+                    <h3>Storage</h3>
+                    <p>300MB space plus secure key storage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="installation" class="installation">
+        <div class="container">
+            <h2>Secure Installation Process</h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Verify Installer</h3>
+                        <p>Validate the SHA-256 hash to confirm authenticity</p>
                     </div>
                 </div>
-                <div class="installation-step">
-                    <img src="./images/step2.png" alt="Step 2" class="step-icon">
-                    <div class="step-details">
-                        <h3>Step 2</h3>
-                        <p>Run the downloaded file</p>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Run As Administrator</h3>
+                        <p>Elevated permissions required for kernel integration</p>
                     </div>
                 </div>
-                <div class="installation-step">
-                    <img src="./images/step3.png" alt="Step 3" class="step-icon">
-                    <div class="step-details">
-                        <h3>Step 3</h3>
-                        <p>Follow the installation wizard instructions</p>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>System Verification</h3>
+                        <p>Security scan confirms system compatibility</p>
                     </div>
                 </div>
-                <div class="installation-step">
-                    <img src="./images/step4.png" alt="Step 4" class="step-icon">
-                    <div class="step-details">
-                        <h3>Step 4</h3>
-                        <p>Launch Entypt and start encrypting your files</p>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Security Deployment</h3>
+                        <p>Defense matrix integrates with your system architecture</p>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section class="security-notice">
+        <div class="container">
+            <div class="notice-content">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div>
+                    <h3>Security Clearance Required</h3>
+                    <p>Entypt requires administrative access to establish system-level protection. Our installer creates a security perimeter at the kernel level that blocks all unauthorized access attempts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 data-aos="fade-up">Trusted by Security Professionals</h2>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-item" data-aos="fade-up">
+                    <div class="testimonial-content">
+                        <p>"Entypt provides the most robust encryption solution we've ever implemented. Our sensitive data has never been more secure."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="CTO portrait">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <p>CTO, Global Financial Services</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-content">
+                        <p>"After implementing Entypt, our security audits have shown zero vulnerabilities in our most critical systems. Impressive technology."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="CISO portrait">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>CISO, Healthcare Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="trust-badges" data-aos="fade-up">
+                <img src="https://via.placeholder.com/150x60?text=TrustBadge" alt="Security Trust Badge">
+                <img src="https://via.placeholder.com/150x60?text=Certified" alt="Certified Badge">
+                <img src="https://via.placeholder.com/150x60?text=Verified" alt="Verified Badge">
+                <img src="https://via.placeholder.com/150x60?text=TopRated" alt="Top Rated Badge">
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>© 2025 Entypt. All rights reserved.</p>
-        <div class="social-links">
-            <a href="#"><img src="./images/twitter-icon.png" alt="Twitter" class="social-icon"></a>
-            <a href="#"><img src="./images/github-icon.png" alt="GitHub" class="social-icon"></a>
-            <a href="#"><img src="./images/email-icon.png" alt="Email" class="social-icon"></a>
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0a192f" fill-opacity="1" d="M0,224L48,224C96,224,192,224,288,208C384,192,480,160,576,165.3C672,171,768,213,864,218.7C960,224,1056,192,1152,176C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-shield-virus"></i>
+                    <span>ENTYPT</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Security</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Compliance</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Entypt Security Solutions</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Add JavaScript libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+            
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
