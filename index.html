@@ -190,50 +190,50 @@
                         <div class="screenshot active">
                             <img src="images/screenshot1.png" alt="Password">
                             <div class="screenshot-desc">
-                                <h4>Dashboard Overview</h4>
-                                <p>The main dashboard provides real-time security status and threat monitoring.</p>
+                                <h4>Pasword Setup</h4>
+                                <p>Enter the password that can be typed naturally.</p>
                             </div>
                         </div>
                         <div class="screenshot">
                             <img src="images/screenshot2.png" alt="Typing pattern">
                             <div class="screenshot-desc">
-                                <h4>Security Configuration</h4>
-                                <p>Configure your protection levels and security protocols.</p>
+                                <h4>Pattern Training</h4>
+                                <p>Train model by typing your password with your natural typing pattern.</p>
                             </div>
                         </div>
                         <div class="screenshot">
                             <img src="images/screenshot3.png" alt="Threshold">
                             <div class="screenshot-desc">
-                                <h4>File Protection</h4>
-                                <p>Select folders and files for encryption and advanced protection.</p>
+                                <h4>Threshold Setting</h4>
+                                <p>Drag the slider to set threshold of your choice.</p>
                             </div>
                         </div>
                         <div class="screenshot">
                             <img src="images/screenshot4.png" alt="Security Questions">
                             <div class="screenshot-desc">
-                                <h4>Network Security</h4>
-                                <p>Monitor and control network connections with military-grade filters.</p>
+                                <h4>Security Questions</h4>
+                                <p>Set security questions to unlock system incase if you can't match your typing pattern.</p>
                             </div>
                         </div>
                         <div class="screenshot">
                             <img src="images/screenshot5.png" alt="Matrix screen">
                             <div class="screenshot-desc">
-                                <h4>Advanced Encryption</h4>
-                                <p>Access the powerful AES-256 encryption tools for sensitive data.</p>
+                                <h4>Background Matrix effect</h4>
+                                <p>Set a character to redirect into security questions when matrix is paused. Doble-click on time to pause matrix</p>
                             </div>
                         </div>
                         <div class="screenshot">
                             <img src="images/screenshot6.png" alt="Review">
                             <div class="screenshot-desc">
-                                <h4>Threat Detection</h4>
-                                <p>View detected threats and automatic mitigation actions taken.</p>
+                                <h4>Confirmation</h4>
+                                <p>Ensure all  steps completed and check the conirmation box and save the settings.</p>
                             </div>
                         </div>
                         <div class="screenshot">
                             <img src="images/screenshot7.png" alt="Lockscreen Demo">
                             <div class="screenshot-desc">
-                                <h4>System Reports</h4>
-                                <p>Comprehensive reports of your system's security status and history.</p>
+                                <h4>Lockscreen Sample</h4>
+                                <p>After logging on to the system, lockscreen will be activated and protects the system.</p>
                             </div>
                         </div>
                     </div>
@@ -305,6 +305,8 @@
 
     <!-- Add JavaScript libraries -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Original page functionality script - keep this separate -->
     <script>
         // Initialize AOS animations
         document.addEventListener('DOMContentLoaded', function() {
@@ -320,8 +322,6 @@
             menuToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
             });
-
-            // Background Matrix effect removed
 
             // Installation & Guide Tabs
             const tabButtons = document.querySelectorAll('.tab-button');
@@ -346,6 +346,7 @@
             const prevBtn = document.getElementById('prev-screenshot');
             const nextBtn = document.getElementById('next-screenshot');
             let currentSlide = 0;
+            let slideInterval;
             
             function showSlide(n) {
                 // Hide all slides
@@ -370,10 +371,57 @@
                 });
             });
             
-            // Auto-advance slides every 5 seconds
-            setInterval(() => {
-                showSlide(currentSlide + 1);
-            }, 5000);
+            // Function to start the auto-advance interval
+            function startSlideInterval() {
+                slideInterval = setInterval(() => {
+                    showSlide(currentSlide + 1);
+                }, 5000);
+            }
+            
+            // Start the automatic slideshow
+            startSlideInterval();
+            
+            // Pause slideshow on mouse hover
+            const screenshotsContainer = document.querySelector('.screenshots-container');
+            screenshotsContainer.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            // Resume slideshow when mouse leaves
+            screenshotsContainer.addEventListener('mouseleave', () => {
+                startSlideInterval();
+            });
+        });
+    </script>
+    
+    <!-- Firebase integration - keep this separate from main functionality -->
+    <script type="module">
+        // Import Firebase functionality
+        import { sendMessageToFirebase } from './javascript.js';
+        
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                const contactForm = document.getElementById('contact-form');
+                
+                if (contactForm) {
+                    contactForm.addEventListener('submit', async function(event) {
+                        event.preventDefault();
+                        
+                        const email = document.getElementById('email').value;
+                        const message = document.getElementById('message').value;
+                        
+                        // Send message to Firebase
+                        await sendMessageToFirebase(email, message);
+                        
+                        // Clear the form after successful submission
+                        contactForm.reset();
+                    });
+                }
+            } catch (error) {
+                console.error("Error setting up Firebase form:", error);
+                // Don't let Firebase errors affect page functionality
+            }
         });
     </script>
 </body>
