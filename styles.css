@@ -263,11 +263,14 @@ header .container {
 .download-area {
     margin-top: 2.5rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Changed from column to row */
+    justify-content: center; /* Center the buttons */
     align-items: center;
+    gap: 1rem; /* Space between buttons */
+    flex-wrap: wrap; /* Allow wrapping on very small screens */
 }
 
-.download-button {
+.download-button, .video-button {
     display: flex;
     align-items: center;
     background: var(--gradient-accent);
@@ -279,32 +282,149 @@ header .container {
     transition: var(--transition);
     box-shadow: var(--shadow-md);
     transform: translateY(0);
+    width: 100%; /* Make buttons same width */
+    justify-content: center;
 }
 
-.download-button:hover {
+.download-button {
+    max-width: 300px; /* Keep original size for download button */
+}
+
+.video-button {
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: var(--light-text);
+    border: 2px solid var(--accent-color);
+    padding: 0.6rem 0.7rem; /* Further reduced padding */
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    transform: translateY(0);
+    max-width: 90px; /* Smaller button width */
+}
+
+.download-button:hover, .video-button:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
 }
 
-.download-button i {
+.download-button i, .video-button i {
     font-size: 2rem;
     margin-right: 1rem;
 }
 
-.download-button span {
+.video-button i {
+    font-size: 1.5rem; /* Smaller icon */
+    color: var(--accent-color);
+    margin-right: 0; /* Remove right margin since text is below */
+    margin-bottom: 0.2rem; /* Less space below icon */
+}
+
+.download-button span, .video-button span {
     display: flex;
     flex-direction: column;
 }
 
-.download-button small {
+.download-button small, .video-button small {
     font-weight: 400;
     opacity: 0.8;
 }
 
-.download-info {
-    margin-top: 1rem;
-    font-size: 0.85rem;
-    opacity: 0.7;
+.video-button span {
+    display: block; /* Make span a block element */
+    text-align: center;
+    font-size: 0.75rem; /* Smaller text */
+    line-height: 1.1;
+}
+
+.video-button small {
+    display: none; /* Hide the small text */
+}
+
+/* Video Modal Styles */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.video-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    z-index: 1001;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1002;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.close-modal i {
+    color: var(--light-text);
+    font-size: 1.2rem;
+}
+
+.close-modal:hover {
+    background: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.video-container {
+    width: 100%;
+    background-color: #000;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
 }
 
 /* Features */
@@ -968,7 +1088,7 @@ select {
     color: var(--light-text);
     opacity: 0.7;
     font-size: 0.9rem;
-    transition: var(--transition);
+    transition: var (--transition);
 }
 
 .footer-links a:hover {
@@ -1247,5 +1367,32 @@ select {
     
     .screenshot-desc p {
         font-size: 0.8rem;
+    }
+
+    .download-button, .video-button {
+        padding: 0.8rem 1.5rem;
+        max-width: 250px;
+    }
+    
+    .download-button i, .video-button i {
+        font-size: 1.5rem;
+        margin-right: 0.8rem;
+    }
+    
+    .modal-container {
+        width: 95%;
+    }
+
+    .download-area {
+        flex-direction: column; /* Stack vertically on small screens */
+    }
+    
+    .video-button {
+        max-width: 80px; /* Even smaller on mobile */
+        padding: 0.5rem 0.6rem;
+    }
+    
+    .video-button i {
+        font-size: 1.4rem;
     }
 }

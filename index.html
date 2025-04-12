@@ -27,7 +27,7 @@
                 <ul class="nav-links">
                     <li><a href="#download">Download</a></li>
                     <li><a href="#requirements">Requirements</a></li>
-                    <li><a href="#installation">Installation & Guide</a></li>
+                    <li><a href="#installation">Installation Guide</a></li>
                     <li><a href="#contact" class="cta-button">Contact</a></li>
                 </ul>
             </nav>
@@ -51,8 +51,15 @@
                         </span>
                     </a>
                     
+                    <a href="#" class="video-button" id="videoButton">
+                        <i class="fas fa-play-circle"></i>
+                        <span>
+                            <strong>WATCH VIDEO</strong>
+                        </span>
+                    </a>
+                    
                     <div class="download-info">
-                        <p class="hash">RECOMMENDED: Read Requirements and Installation Guide before download</p>
+                        <p class="hash">RECOMMENDED: Read Requirements, Installation Guide and watch video before downloading</p>
                         <p class="file-details">80MB • Only for Windows • Security Application</p>
                     </div>
                 </div>
@@ -303,6 +310,22 @@
         </div>
     </footer>
 
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="close-modal" id="closeVideoModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="video-container">
+                <video id="demoVideo" controls>
+                    <source src="images/video-guide.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
     <!-- Add JavaScript libraries -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
@@ -321,6 +344,31 @@
             
             menuToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
+            });
+
+            // Video Modal Functionality
+            const videoButton = document.getElementById('videoButton');
+            const videoModal = document.getElementById('videoModal');
+            const closeVideoModal = document.getElementById('closeVideoModal');
+            const videoElement = document.getElementById('demoVideo');
+            
+            videoButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                videoModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            });
+            
+            closeVideoModal.addEventListener('click', function() {
+                videoModal.classList.remove('active');
+                videoElement.pause(); // Pause video when closing modal
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+            
+            // Close modal when clicking overlay
+            videoModal.querySelector('.modal-overlay').addEventListener('click', function() {
+                videoModal.classList.remove('active');
+                videoElement.pause();
+                document.body.style.overflow = '';
             });
 
             // Installation & Guide Tabs
